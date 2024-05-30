@@ -1,6 +1,6 @@
 # IGOR Tree Climber
 ## Introduction
-This how-to guide shows the steps needed to program a tree clibing robot with two gecko inspired grippers and a flippong body.
+This how-to guide shows the steps needed to program a tree clibing robot with two gecko inspired grippers and a flipping body.
 
 ## Table of Contents
 1. [Hardware Requirements](#hardware-requirements)
