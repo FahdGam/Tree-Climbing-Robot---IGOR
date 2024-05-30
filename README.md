@@ -25,7 +25,7 @@ This how-to guide shows the steps needed to program a tree clibing robot with tw
 
 ## Code Explanation
 ### Setup
-The `setup()` function attaches the sensor and servo pins as well as setting all servos to 0&deg,.
+The `setup()` function attaches the sensor and servo pins and sets all servos to 0&deg;.
 
 ### Loop
 The `loop()` function is where climbing occurs, by reading the distance to the canopy through the ultrasonic sensor measurements, and following a process to climb up if the distance to the canopy is large, and down after the distance has been achieved. This loop strategically counts the steps (or flips) taken to reach the top, then reverses the process on the way down without the need for feedback from the sensor.
