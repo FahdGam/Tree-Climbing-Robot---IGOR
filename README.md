@@ -1,6 +1,6 @@
 # IGOR Tree Climber
 ## Introduction
-This project demonstrates an Arduino-based robotic climber using multiple servos and an ultrasonic sensor. The robot climbs up and down based on distance readings from the ultrasonic sensor.
+This how-to guide shows the steps needed to program a tree clibing robot with two gecko inspired grippers and a flippong body.
 
 ## Table of Contents
 1. [Hardware Requirements](#hardware-requirements)
@@ -27,10 +27,10 @@ This project demonstrates an Arduino-based robotic climber using multiple servos
 
 ## Code Explanation
 ### Setup
-The `setup()` function initializes the sensor and servos, and sets their initial positions.
+The setup() function attaches the sensor and servo pins as well as setting all servos to 0&deg,.
 
 ### Loop
-The `loop()` function continuously reads the distance from the ultrasonic sensor and controls the servos to make the robot climb or descend.
+The loop() function is where climbing occurs, by reading the distance to the canopy through the ultrasonic sensor measurements, and following a process to climb up if the distance is large, and down after the distance has been achieved.
 
 ### Functions
 - `flip()`: Rotates the servos to flip the robot's grip.
