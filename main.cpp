@@ -102,7 +102,9 @@ void loop() {
 }
 
 void flip() {
-  // Basically flipping the bottom gripper to top
+  // Basically flipping the bottom gripper to top if the bottomGripper is disengaged
+  // OR
+  // Flipping the top gripper to bottom if the topGripper is disengaged
   fourth.write(90);
   delay(1000);
   third.write(90);
@@ -128,8 +130,8 @@ void unflip() {
 void releaseGrip(Servo theServo) {
   // Incremental for slower speed and better control
   for (int angle = 0; angle <= 180; angle++) { // Rotate from 0 to 180 degrees opening the gripper
-    theServo.write(angle); // Send the angle value to the servo
-    delay(15); // Delay for smoother movement
+    theServo.write(angle); // Send angle value to servo
+    delay(15); // Delay for smoothness
   }
 }
 
