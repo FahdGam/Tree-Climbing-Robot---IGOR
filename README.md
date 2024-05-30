@@ -34,7 +34,7 @@ The `loop()` function is where climbing occurs, by reading the distance to the c
 - `flip()`: For climbing up, rotates the standard servos on the body to flip the bottom gripper to the top (if the bottom gripper is released). For climbing down, rotates the servos to flip the top gripper to the bottom (if the top gripper is released).
 - `unflip()`: The opposite of `flip()` which accounts for the servos' limited range of motion, allowing the robot body to keep flipping upwards and downwards depending on which gripper is released.
 - `releaseGrip(Servo theServo)`: Slowly releases the given gripper's grip.
-- `grip(Servo theServo)`: Slwly tightens the gripper's grip.
+- `grip(Servo theServo)`: Slowly tightens the gripper's grip.
 - `printDistance()`: Measures and prints the distance from the ultrasonic sensor.
 
 ## How To Use
