@@ -23,7 +23,7 @@ This project demonstrates an Arduino-based robotic climber using multiple servos
 - Arduino IDE (with included Servo Library)
 
 ## Circuit Diagram
-![Circuit Diagram](path/to/circuit-diagram.png)
+![Circuit Diagram](plainCircuit.png)
 
 ## Code Explanation
 ### Setup
