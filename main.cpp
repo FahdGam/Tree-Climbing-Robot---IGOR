@@ -14,14 +14,14 @@ Servo fourth; // Bottom Gripper Tilt
 const int topGripPin = 2;    // D2
 const int bottomGripPin = 3; // D3
 
-const int firstPin = 4;  // D4
-const int secondPin = 5; // etc.
-const int thirdPin = 6;
-const int fourthPin = 7;
-
 // Ultrasonic Pins
+const int echoPin = 8; // D8
 const int trigPin = 9;  // D9
-const int echoPin = 10; // D10
+
+const int firstPin = 10;  // D10
+const int secondPin = 11; // etc.
+const int thirdPin = 12;
+const int fourthPin = 13;
 
 int motorConfig = 0; // linked motors currently at 0 degrees (method because servos 180 only)
 int reachedTop = 0; // hasn't reached top yet
