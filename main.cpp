@@ -24,6 +24,8 @@ const int trigPin = 9;  // D9
 const int echoPin = 10; // D10
 
 int motorConfig = 0; // linked motors currently at 0 degrees (method because servos 180 only)
+int reachedTop = 0; // hasn't reached top yet
+int count = 0; // how many flips
 
 // Variables for ultrasonic sensor
 long duration;
@@ -55,34 +57,59 @@ void setup() {
 void loop() {
   // Get Ultrasonic Distance
   printDistance();
-
-  // Check which configuration the body is at
-  if (motorConfig == 0) {
-    // Body is not flipped
-    releaseGrip(bottomGrip);
-    delay(1000);
-    flip();
-    motorConfig = 180;
-    grip(bottomGrip);
+  if (distance > 50) {
+    // body not yet at top so must climb up
+    // Check which configuration the body is at
+    if (motorConfig == 0) {
+      // Body is not flipped
+      releaseGrip(bottomGrip);
+      delay(1000);
+      flip();
+      motorConfig = 180;
+      grip(bottomGrip);
+      count++;
+    } else {
+      releaseGrip(topGrip); // In this case, actually the bottom gripper
+      delay(1000);
+      unflip();
+      motorConfig = 0;
+      grip(topGrip);
+      count++;
+    }
   } else {
-    releaseGrip(topGrip); // In this case, actually the bottom gripper
-    delay(1000);
-    unflip();
-    motorConfig = 0;
-    grip(topGrip);
+    // body is at the top so must climb down
+    for (int i = 0; i < count; ++i) {
+      // ie how many flips it took to get up which is equal to the flips taken to get down
+      if (motorConfig == 0) {
+        // similar to climbing up except the top gripper is released instead to allow for descending
+        releaseGrip(topGrip);
+        delay(1000);
+        flip();
+        motorConfig = 180;
+        grip(topGrip);
+      } else {
+        releaseGrip(bottomGrip);
+        delay(1000);
+        unflip();
+        motorConfig = 0;
+        grip(bottomGrip);
+      }
+    }
+    while(1) {
+      // infinite loop since task is complete
+    }
   }
 }
 
 void flip() {
-  // This may need to change; it's just what I thought the flipping would be
   // Basically flipping the bottom gripper to top
-  fourth.write(180);
+  fourth.write(90);
   delay(1000);
-  third.write(180);
+  third.write(90);
   delay(1000);
-  second.write(180);
+  second.write(90);
   delay(1000);
-  first.write(180); // Rotate clockwise to 180 degrees
+  first.write(90); // Rotate clockwise to 90 degrees
   delay(1000);
 }
 
