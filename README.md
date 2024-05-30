@@ -8,8 +8,6 @@ This how-to guide shows the steps needed to program a tree clibing robot with tw
 3. [Circuit Diagram](#circuit-diagram)
 4. [Code Explanation](#code-explanation)
 5. [Usage Instructions](#usage-instructions)
-6. [Contributing](#contributing)
-7. [License](#license)
 
 ## Hardware Requirements
 - Arduino Uno Rev 3
